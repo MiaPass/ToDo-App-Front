@@ -1,0 +1,10 @@
+hr {
+    /* clear: both; */
+    visibility: hidden;
+}
+
+.cards-buttons{
+    border: none;
+    height: 30px;
+    width: 208px;
+}

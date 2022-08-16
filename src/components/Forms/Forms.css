@@ -1,0 +1,20 @@
+hr {
+  /* clear: both; */
+  visibility: hidden;
+}
+
+#inputs {
+  text-align: center;
+  /* border: none; */
+  height: 30px;
+  width: 208px;
+}
+
+.modify-div {
+  display: flex;
+  justify-content: space-around;
+}
+
+#out-create button {
+  margin-left: 50px;
+}

@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+}
+
+.App {
+  outline-width: 9px;
+  outline-style: solid;
+  outline-color: rgba(255, 136, 0, 1);
+
+  min-height: 98.3vh;
+
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: radial-gradient(
+    rgba(255, 221, 201, 1) 0%,
+    rgba(255, 136, 0, 1) 75%,
+    rgba(255, 136, 0, 1) 100%
+  );
+}
+
+[data-theme="dark"] {
+  color: rgb(255, 255, 255);
+
+  outline-width: 9px;
+  outline-style: solid;
+  outline-color: rgb(0, 0, 25);
+
+  min-height: 98.3vh;
+
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: radial-gradient(
+    rgb(0, 0, 98) 0%,
+    rgb(0, 0, 25) 75%,
+    rgb(0, 0, 25) 100%
+  );
+}

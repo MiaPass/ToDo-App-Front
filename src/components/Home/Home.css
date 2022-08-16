@@ -1,0 +1,29 @@
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  border: none;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.cards .incomplete {
+  float: left;
+  margin-top: 5px;
+}
+
+.cards .inprogress {
+  float: left;
+  margin-top: 5px;
+}
+
+.cards .complete {
+  float: left;
+  margin-top: 5px;
+}
