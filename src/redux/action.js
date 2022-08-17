@@ -9,7 +9,9 @@ import { GET_ALL, MODIFY, CREATE, DELETE, GET_ONE, THEME } from "../constants";
 export function getAll() {
   return async function (dispatch) {
     try {
-      const res = await axios.get(`/todos/all`);
+      const res = await axios.get(
+        `https://todo-app-back.herokuapp.com/todos/all`
+      );
       dispatch({ type: GET_ALL, payload: res.data });
     } catch (err) {
       console.log(err);
@@ -29,7 +31,10 @@ export function getAll() {
 export function modify(form) {
   return async function (dispatch) {
     try {
-      const res = await axios.post(`/todos/modify`, form);
+      const res = await axios.post(
+        `https://todo-app-back.herokuapp.com/todos/modify`,
+        form
+      );
       dispatch({ type: MODIFY, payload: res.data });
     } catch (err) {
       console.log(err);
@@ -49,7 +54,10 @@ export function modify(form) {
 export function createTodo(form) {
   return async function (dispatch) {
     try {
-      const res = await axios.post(`/todos/create`, form);
+      const res = await axios.post(
+        `https://todo-app-back.herokuapp.com/todos/create`,
+        form
+      );
       dispatch({ type: CREATE, payload: res.data });
     } catch (err) {
       console.log(err);
@@ -69,7 +77,9 @@ export function createTodo(form) {
 export function deleteTodo(id) {
   return async function (dispatch) {
     try {
-      const res = await axios.delete(`/todos/delete?id=${id}`);
+      const res = await axios.delete(
+        `https://todo-app-back.herokuapp.com/todos/delete?id=${id}`
+      );
       dispatch({ type: DELETE, payload: res.data });
     } catch (err) {
       console.log(err);
