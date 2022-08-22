@@ -1,4 +1,8 @@
 .App {
+  text-align: center;
+}
+
+.App {
   outline-width: 9px;
   outline-style: solid;
   outline-color: rgba(255, 136, 0, 1);
