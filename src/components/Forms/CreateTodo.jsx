@@ -54,7 +54,10 @@ export default function Create({ setOpenCreate }) {
     return (
       <div>
         <h2> Crear Tarea</h2>
-        <form className="form-container" onSubmit={(e) => handleSubmit(e)}>
+        <form
+          className="create-div-container"
+          onSubmit={(e) => handleSubmit(e)}
+        >
           <input
             className="form-title"
             name="title"
@@ -75,6 +78,7 @@ export default function Create({ setOpenCreate }) {
           <input type="reset" onClick={(e) => handleReset(e)} />
           <hr />
           <input
+            id="form-submit"
             type="submit"
             onSubmit={(e) => handleSubmit(e)}
             placeholder="Guardar"

@@ -27,6 +27,10 @@ button {
 }
 
 [data-theme="dark"] {
+  text-align: center;
+}
+
+[data-theme="dark"] {
   color: rgb(153, 153, 153);
 
   outline-width: 9px;
