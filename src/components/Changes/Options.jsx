@@ -57,98 +57,96 @@ export default function Changes(data) {
       <div>
         {data.data.status === "complete" ? (
           <label>
-            <button
-              id="incomplete"
-              name="incomplete"
-              value="incomplete"
-              onClick={(e) => handleSelect(e)}
-            >
-              Cambiar estado a incompleto
-            </button>
+            <section>
+              <button
+                id="incomplete"
+                name="incomplete"
+                value="incomplete"
+                onClick={(e) => handleSelect(e)}
+              >
+                Cambiar estado a incompleto
+              </button>
+            </section>
             <br />
             <br />
-            <button
-              id="inprogress"
-              name="inprogress"
-              value="inprogress"
-              onClick={(e) => handleSelect(e)}
-            >
-              Cambiar estado a en progreso
-            </button>
+            <section>
+              <button
+                id="inprogress"
+                name="inprogress"
+                value="inprogress"
+                onClick={(e) => handleSelect(e)}
+              >
+                Cambiar estado a en progreso
+              </button>
+            </section>
             <br />
             <br />
-            <button
-              id="delete"
-              name="delete"
-              value="delete"
-              onClick={(e) => handleSelect(e)}
-            >
-              Borrar tarea
-            </button>
           </label>
         ) : data.data.status === "inprogress" ? (
           <label>
-            <button
-              id="incomplete"
-              name="incomplete"
-              value="incomplete"
-              onClick={(e) => handleSelect(e)}
-            >
-              Cambiar estado a incompleto
-            </button>
+            <section>
+              <button
+                id="incomplete"
+                name="incomplete"
+                value="incomplete"
+                onClick={(e) => handleSelect(e)}
+              >
+                Cambiar estado a incompleto
+              </button>
+            </section>
             <br />
             <br />
-            <button
-              id="complete"
-              name="complete"
-              value="complete"
-              onClick={(e) => handleSelect(e)}
-            >
-              Cambiar estado a completo
-            </button>
+            <section>
+              <button
+                id="complete"
+                name="complete"
+                value="complete"
+                onClick={(e) => handleSelect(e)}
+              >
+                Cambiar estado a completo
+              </button>
+            </section>
             <br />
             <br />
-            <button
-              id="delete"
-              name="delete"
-              value="delete"
-              onClick={(e) => handleSelect(e)}
-            >
-              Borrar tarea
-            </button>
           </label>
         ) : (
           <label>
-            <button
-              id="inprogress"
-              name="inprogress"
-              value="inprogress"
-              onClick={(e) => handleSelect(e)}
-            >
-              Cambiar estado a en progreso
-            </button>
+            <section>
+              <button
+                id="inprogress"
+                name="inprogress"
+                value="inprogress"
+                onClick={(e) => handleSelect(e)}
+              >
+                Cambiar estado a en progreso
+              </button>
+            </section>
             <br />
             <br />
-            <button
-              id="complete"
-              name="complete"
-              value="complete"
-              onClick={(e) => handleSelect(e)}
-            >
-              Cambiar estado a completo
-            </button>
+            <section>
+              <button
+                id="complete"
+                name="complete"
+                value="complete"
+                onClick={(e) => handleSelect(e)}
+              >
+                Cambiar estado a completo
+              </button>
+            </section>
             <br />
             <br />
-            <button
-              id="delete"
-              name="delete"
-              value="delete"
-              onClick={(e) => handleSelect(e)}
-            >
-              Borrar tarea
-            </button>
           </label>
         )}
+        <section>
+          <button
+            id="delete"
+            name="delete"
+            value="delete"
+            onClick={(e) => handleSelect(e)}
+          >
+            Borrar tarea
+          </button>
+        </section>
       </div>
     );
   } catch (error) {}

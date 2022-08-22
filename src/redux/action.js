@@ -22,6 +22,8 @@ export function getAll() {
         icon: "error",
         button: "Aceptar",
         timer: "10000",
+      }).then(() => {
+        window.location.reload();
       });
     }
   };
@@ -46,6 +48,8 @@ export function modify(form) {
         icon: "error",
         button: "Aceptar",
         timer: "10000",
+      }).then(() => {
+        window.location.reload();
       });
     }
   };
@@ -70,6 +74,8 @@ export function createTodo(form) {
         icon: "error",
         button: "Aceptar",
         timer: "10000",
+      }).then(() => {
+        window.location.reload();
       });
     }
   };
@@ -93,6 +99,8 @@ export function deleteTodo(id) {
         icon: "error",
         button: "Aceptar",
         timer: "10000",
+      }).then(() => {
+        window.location.reload();
       });
     }
   };
