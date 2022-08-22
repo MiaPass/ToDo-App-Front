@@ -60,7 +60,7 @@ export default function Modify({ setOpenModify, data }) {
         id="inputs"
         name="title"
         type="text"
-        placeholder={data.title}
+        placeholder={data.title || "Titulo"}
         value={form.title}
         onChange={(e) => handleInput(e)}
       />
@@ -71,7 +71,7 @@ export default function Modify({ setOpenModify, data }) {
         id="inputs"
         name="description"
         type="text"
-        placeholder={data.description}
+        placeholder={data.description || "Descripcion"}
         value={form.description}
         onChange={(e) => handleInput(e)}
       />
