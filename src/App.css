@@ -19,7 +19,7 @@
 }
 
 [data-theme="dark"] {
-  color: rgb(255, 255, 255);
+  color: rgb(153, 153, 153);
 
   outline-width: 9px;
   outline-style: solid;
@@ -34,4 +34,12 @@
     rgb(0, 0, 25) 75%,
     rgb(0, 0, 25) 100%
   );
+}
+
+[data-theme="dark"] input,
+textarea,
+button {
+  color: rgb(153, 153, 153);
+  background-color: transparent;
+  border: 0.3px solid rgb(153, 153, 153);
 }

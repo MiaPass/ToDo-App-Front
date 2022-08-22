@@ -1,10 +1,9 @@
 hr {
-    /* clear: both; */
-    visibility: hidden;
+  /* clear: both; */
+  visibility: hidden;
 }
 
-.cards-buttons{
-    border: none;
-    height: 30px;
-    width: 208px;
+.cards-buttons {
+  height: 30px;
+  width: 208px;
 }
