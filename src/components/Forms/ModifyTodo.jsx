@@ -20,7 +20,7 @@ export default function Modify({ setOpenModify, data }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log(form);
     if (!form.title && !form.description) {
       swal({
         title: "Por favor ingrese un titulo o una descripción",
@@ -29,10 +29,11 @@ export default function Modify({ setOpenModify, data }) {
         timer: "10000",
       });
     } else {
-      dispatch(modify(form));
+      dispatch(modify(form)).then(() => {
+        setOpenModify({ status: false, on: form.id });
+        window.location.reload();
+      });
     }
-    setOpenModify({ status: false, on: form.id });
-    window.location.reload();
   };
 
   const handleInput = (e) => {
@@ -60,7 +61,7 @@ export default function Modify({ setOpenModify, data }) {
         id="inputs"
         name="title"
         type="text"
-        placeholder={data.title || "Titulo"}
+        placeholder="Titulo"
         value={form.title}
         onChange={(e) => handleInput(e)}
       />
@@ -71,7 +72,7 @@ export default function Modify({ setOpenModify, data }) {
         id="inputs"
         name="description"
         type="text"
-        placeholder={data.description || "Descripcion"}
+        placeholder="Descripcion"
         value={form.description}
         onChange={(e) => handleInput(e)}
       />

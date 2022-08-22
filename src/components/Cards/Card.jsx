@@ -25,9 +25,10 @@ export default function Cards(data) {
             {openModify.status === true && openModify.on === todo[0]._id ? (
               <Modify setOpenModify={setOpenModify} data={todo[0]} />
             ) : (
-              <>
+              <div className="card-container">
                 {todo[0].title ? (
                   <button
+                    id="title"
                     className="cards-buttons"
                     onClick={(e) => handleClick(e, todo[0]._id)}
                   >
@@ -52,7 +53,7 @@ export default function Cards(data) {
 
                 <hr />
                 <Changes data={todo[0]} />
-              </>
+              </div>
             )}
           </section>
           <hr />
@@ -66,9 +67,10 @@ export default function Cards(data) {
                 {openModify.status === true && openModify.on === td._id ? (
                   <Modify setOpenModify={setOpenModify} data={td} id={td._id} />
                 ) : (
-                  <>
+                  <div className="card-container">
                     {td.title ? (
                       <button
+                        id="title"
                         className="cards-buttons"
                         onClick={(e) => handleClick(e, td._id)}
                       >
@@ -92,7 +94,7 @@ export default function Cards(data) {
                     )}
                     <hr />
                     <Changes data={td} />
-                  </>
+                  </div>
                 )}
               </section>
 
