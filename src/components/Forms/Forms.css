@@ -18,3 +18,20 @@ hr {
 #out-create button {
   margin-left: 50px;
 }
+
+.form-title {
+  margin-top: 15px;
+}
+
+.App .form-container {
+  border-radius: 25px;
+  border: 0.3px solid rgb(36, 36, 36);
+  min-width: 300px;
+  min-height: 220px;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .form-container {
+  border-radius: 25px;
+  border: 0.3px solid rgb(153, 153, 153);
+}

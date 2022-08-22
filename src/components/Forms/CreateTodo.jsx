@@ -54,8 +54,9 @@ export default function Create({ setOpenCreate }) {
     return (
       <div>
         <h2> Crear Tarea</h2>
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form className="form-container" onSubmit={(e) => handleSubmit(e)}>
           <input
+            className="form-title"
             name="title"
             type="text"
             value={form.title}

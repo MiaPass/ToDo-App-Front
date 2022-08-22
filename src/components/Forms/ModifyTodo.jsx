@@ -56,8 +56,9 @@ export default function Modify({ setOpenModify, data }) {
   // console.log(data);
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form className="form-container" onSubmit={(e) => handleSubmit(e)}>
       <input
+        className="form-title"
         id="inputs"
         name="title"
         type="text"
