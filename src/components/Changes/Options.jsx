@@ -68,7 +68,7 @@ export default function Changes(data) {
               </button>
             </section>
             <br />
-            <br />
+
             <section>
               <button
                 id="inprogress"
@@ -79,7 +79,6 @@ export default function Changes(data) {
                 Cambiar estado a en progreso
               </button>
             </section>
-            <br />
             <br />
           </label>
         ) : data.data.status === "inprogress" ? (
@@ -95,7 +94,7 @@ export default function Changes(data) {
               </button>
             </section>
             <br />
-            <br />
+
             <section>
               <button
                 id="complete"
@@ -106,7 +105,6 @@ export default function Changes(data) {
                 Cambiar estado a completo
               </button>
             </section>
-            <br />
             <br />
           </label>
         ) : (
@@ -122,7 +120,7 @@ export default function Changes(data) {
               </button>
             </section>
             <br />
-            <br />
+
             <section>
               <button
                 id="complete"
@@ -133,7 +131,6 @@ export default function Changes(data) {
                 Cambiar estado a completo
               </button>
             </section>
-            <br />
             <br />
           </label>
         )}
