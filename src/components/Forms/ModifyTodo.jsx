@@ -31,7 +31,7 @@ export default function Modify({ setOpenModify, data }) {
     } else {
       dispatch(modify(form));
     }
-    setOpenModify(false);
+    setOpenModify({ status: false, on: form.id });
     window.location.reload();
   };
 
@@ -52,6 +52,7 @@ export default function Modify({ setOpenModify, data }) {
       status: data.status,
     });
   };
+  // console.log(data);
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
@@ -84,7 +85,7 @@ export default function Modify({ setOpenModify, data }) {
       <div className="modify-div">
         <button
           onClick={(e) => {
-            setOpenModify(false);
+            setOpenModify({ status: false, on: form.id });
             handleReset(e);
           }}
         >

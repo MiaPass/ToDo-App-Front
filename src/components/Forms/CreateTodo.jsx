@@ -80,24 +80,16 @@ export default function Create({ setOpenCreate }) {
           />
         </form>
         <hr />
-        <div id="out-create">
-          <button
-            onClick={(e) => {
-              setOpenCreate(false);
-              handleReset(e);
-              window.location.reload();
-            }}
-          >
-            Cancelar
-          </button>
-          <button
-            onClick={(e) => {
-              window.location.reload();
-            }}
-          >
-            Inicio
-          </button>
-        </div>
+
+        <button
+          onClick={(e) => {
+            setOpenCreate(false);
+            handleReset(e);
+            window.location.reload();
+          }}
+        >
+          Inicio
+        </button>
       </div>
     );
   } catch (error) {

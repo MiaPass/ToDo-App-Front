@@ -9,7 +9,12 @@ export default function Cards(data) {
   const todo = data.data;
   // console.log(todo);
 
-  const [openModify, setOpenModify] = useState(false);
+  const [openModify, setOpenModify] = useState({ status: false, on: "" });
+
+  const handleClick = (e, id) => {
+    e.preventDefault();
+    setOpenModify({ status: true, on: id });
+  };
 
   return (
     <div>
@@ -17,14 +22,14 @@ export default function Cards(data) {
         <div key={todo._id}>
           <hr />
           <section>
-            {openModify ? (
+            {openModify.status === true && openModify.on === todo[0]._id ? (
               <Modify setOpenModify={setOpenModify} data={todo[0]} />
             ) : (
               <>
                 {todo[0].title ? (
                   <button
                     className="cards-buttons"
-                    onClick={() => setOpenModify(true)}
+                    onClick={(e) => handleClick(e, todo[0]._id)}
                   >
                     {todo[0].title}
                   </button>
@@ -37,7 +42,7 @@ export default function Cards(data) {
                 {todo[0].description ? (
                   <button
                     className="cards-buttons"
-                    onClick={() => setOpenModify(true)}
+                    onClick={(e) => handleClick(e, todo[0]._id)}
                   >
                     {todo[0].description}
                   </button>
@@ -58,14 +63,14 @@ export default function Cards(data) {
             <div key={td._id}>
               <hr />
               <section>
-                {openModify ? (
+                {openModify.status === true && openModify.on === td._id ? (
                   <Modify setOpenModify={setOpenModify} data={td} id={td._id} />
                 ) : (
                   <>
                     {td.title ? (
                       <button
                         className="cards-buttons"
-                        onClick={() => setOpenModify(true)}
+                        onClick={(e) => handleClick(e, td._id)}
                       >
                         {td.title}
                       </button>
@@ -78,7 +83,7 @@ export default function Cards(data) {
                     {td.description ? (
                       <button
                         className="cards-buttons"
-                        onClick={() => setOpenModify(true)}
+                        onClick={(e) => handleClick(e, td._id)}
                       >
                         {td.description}
                       </button>
