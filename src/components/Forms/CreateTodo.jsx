@@ -77,12 +77,14 @@ export default function Create({ setOpenCreate }) {
           <hr />
           <input type="reset" onClick={(e) => handleReset(e)} />
           <hr />
-          <input
+          <button
             id="form-submit"
             type="submit"
             onSubmit={(e) => handleSubmit(e)}
-            placeholder="Guardar"
-          />
+          >
+            {" "}
+            Guardar{" "}
+          </button>
         </form>
         <hr />
 
