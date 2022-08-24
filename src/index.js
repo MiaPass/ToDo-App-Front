@@ -6,15 +6,20 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
+import { FirebaseAppProvider } from "reactfire";
+import firebaseConfig from "./firebase-config";
+
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </FirebaseAppProvider>
     </Provider>
   </React.StrictMode>
 );
