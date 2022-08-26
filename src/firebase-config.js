@@ -1,4 +1,4 @@
-export default firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyBbpO0VfNxQ1DkXR-ajX3GrwCYpqahsiPY",
 
   authDomain: "todoapp-example-828aa.firebaseapp.com",
@@ -13,3 +13,5 @@ export default firebaseConfig = {
 
   measurementId: "G-BP2S4QEMV9",
 };
+
+export default firebaseConfig;

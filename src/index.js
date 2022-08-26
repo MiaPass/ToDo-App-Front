@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -16,9 +16,11 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <Suspense>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </Suspense>
       </FirebaseAppProvider>
     </Provider>
   </React.StrictMode>

@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 
 import swal from "sweetalert";
 
-import { modify } from "../../redux/action";
-import Changes from "../Changes/Options";
+import { modify } from "../../../redux/action";
+import Changes from "../../Changes/Options";
 
 import "./Forms.css";
 

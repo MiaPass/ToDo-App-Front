@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Changes from "../Changes/Options";
-import Modify from "../Forms/ModifyTodo";
+import Modify from "../Forms/Todo/ModifyTodo";
 
 import "./Card.css";
 
