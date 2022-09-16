@@ -1,92 +1,103 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Route, Routes } from "react-router-dom";
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { Route, Routes } from 'react-router-dom'
 
 //components
 
-import Home from "./components/Home/Home";
-import LogRegisPage from "./components/Forms/User/Login-Regis-Page";
+import Home from './components/Home/Home'
+import LogRegisPage from './components/Forms/User/page/Login-Regis-Page'
+import RecoverPassword from './components/Forms/User/recover/Recover'
 
-import useLocalStorage from "use-local-storage";
+import useLocalStorage from 'use-local-storage'
+
+// actions
+
+// eslint-disable-next-line
+import { getUser, changeTheme } from './redux/action'
 
 // firebase
 
-import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-// import { useUser } from "reactfire";
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 // css
 
-import "./App.css";
+import './App.css'
+import Create from './components/Forms/Todo/CreateTodo'
 
 export default function App() {
-  const [log, setLog] = useState(0);
-  const auth = getAuth();
-  // eslint-disable-next-line
-  const dispatch = useDispatch();
-  // const user = useUser();
+  const auth = getAuth()
+  const dispatch = useDispatch()
+
+  const [log, setLog] = useState(0)
 
   // user
 
-  useEffect(() => {
-    setInterval(() => {
-      // dispatch(getMyProfile(auth.currentUser.uid));
-      // console.log("llamo ahora");
-    }, 15000);
-  }, []);
+  const id = auth.currentUser?.uid
 
   onAuthStateChanged(auth, (user) => {
-    if (user) {
-      setLog(1);
+    if ( user ){
+      // User is signed in
+      setLog(1)
     } else {
       // User is signed out
-      setLog(2);
+      setLog(2)
     }
-  });
-
-  const handleLogOut = (e) => {
-    e.preventDefault();
-    signOut(auth);
-  };
+  })
 
   // theme
-  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
   const [theme, setTheme] = useLocalStorage(
-    "theme",
-    defaultDark ? "dark" : "light"
-  );
+    'theme',
+    defaultDark ? 'dark' : 'light',
+  )
 
   const switchTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-  };
+    if (log === 1) {
+      // console.log(id);
+      const theOne = dispatch(getUser(id))
+      console.log(theOne)
+
+      const form = {
+        id: theOne._id,
+        theme: theOne.theme === 'light' ? 'dark' : 'light',
+      }
+      dispatch(changeTheme(form))
+    } else {
+      const newTheme = theme === 'light' ? 'dark' : 'light'
+      setTheme(newTheme)
+    }
+  }
 
   function render() {
     if (log === 1) {
       return (
         <div>
-          <button onClick={(e) => handleLogOut(e)}> Cerrar sesión</button>
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route exact path="/" element={<Home log={log} id={id} />} />
+
+            <Route path="/new" element={<Create id={id} />} />
+            <Route path="/recovery" element={<RecoverPassword />} />
           </Routes>
         </div>
-      );
+      )
     } else if (log === 2) {
       return (
         <div>
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/login-register" element={<LogRegisPage />} />
+            <Route exact path="/" element={<Home log={log} id={id} />} />
+            <Route path="/login-register" element={<LogRegisPage />} />
+            <Route path="/recovery" element={<RecoverPassword />} />
           </Routes>
         </div>
-      );
+      )
     }
   }
 
   return (
     <div className="App" data-theme={theme}>
       <button onClick={switchTheme}>
-        Cambiar a tema {theme === "light" ? "oscuro" : "claro"}
+        Cambiar a tema {theme === 'light' ? 'oscuro' : 'claro'}
       </button>
 
       {log !== 0 ? (
@@ -100,5 +111,5 @@ export default function App() {
         </div>
       )}
     </div>
-  );
+  )
 }

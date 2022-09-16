@@ -6,7 +6,7 @@ const initialState = {
   new: {},
   modify: {},
   delete: {},
-  day: true,
+  theme: {},
 };
 
 export default function reducer(state = initialState, { type, payload }) {
@@ -55,7 +55,7 @@ export default function reducer(state = initialState, { type, payload }) {
     case THEME:
       return {
         ...state,
-        day: !state.day,
+        theme: payload,
       };
 
     /*-------------- DEFAULT --------------*/

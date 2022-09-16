@@ -1,54 +1,57 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
-import swal from "sweetalert";
+import swal from 'sweetalert'
 
-import { createTodo } from "../../../redux/action";
+import { createTodo } from '../../../redux/action'
 
-import "./Forms.css";
+import './Forms.css'
 
-export default function Create({ setOpenCreate }) {
-  const dispatch = useDispatch();
+export default function Create({ id }) {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const [form, setForm] = useState({
-    title: "",
-    description: "",
-    status: "incomplete",
-  });
+    creator: id,
+    title: '',
+    description: '',
+    status: 'incomplete',
+  })
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (!form.title && !form.description) {
       swal({
-        title: "Por favor ingrese un titulo o una descripción",
-        icon: "error",
-        button: "Aceptar",
-        timer: "10000",
-      });
+        title: 'Por favor ingrese un titulo o una descripción',
+        icon: 'error',
+        button: 'Aceptar',
+        timer: '10000',
+      })
     } else {
-      dispatch(createTodo(form));
-      handleReset(e);
+      dispatch(createTodo(form))
+      handleReset(e)
     }
-  };
+  }
 
   const handleInput = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     setForm({
       ...form,
       [e.target.name]: e.target.value,
-    });
-  };
+    })
+  }
 
   const handleReset = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     setForm({
-      title: "",
-      description: "",
-    });
-  };
+      title: '',
+      description: '',
+    })
+  }
 
   try {
     return (
@@ -82,24 +85,23 @@ export default function Create({ setOpenCreate }) {
             type="submit"
             onSubmit={(e) => handleSubmit(e)}
           >
-            {" "}
-            Guardar{" "}
+            {' '}
+            Guardar{' '}
           </button>
         </form>
         <hr />
 
         <button
           onClick={(e) => {
-            setOpenCreate(false);
-            handleReset(e);
-            window.location.reload();
+            handleReset(e)
+            navigate('/')
           }}
         >
           Inicio
         </button>
       </div>
-    );
+    )
   } catch (error) {
-    console.log(error);
+    console.log(error)
   }
 }

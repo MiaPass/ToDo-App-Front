@@ -1,8 +1,8 @@
-.App {
+[data-theme="light"] {
   text-align: center;
 }
 
-.App {
+[data-theme="light"] {
   outline-width: 9px;
   outline-style: solid;
   outline-color: rgba(255, 136, 0, 1);
@@ -18,7 +18,7 @@
   );
 }
 
-.App input,
+[data-theme="light"] input,
 textarea,
 button {
   color: rgb(0, 0, 0);

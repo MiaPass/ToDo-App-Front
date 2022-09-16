@@ -1,0 +1,12 @@
+[data-theme="light"] .formReg {
+  border: none;
+}
+
+[data-theme="dark"] .formReg {
+  border: none;
+}
+
+.div-reg {
+  width: 45%;
+  float: left;
+}

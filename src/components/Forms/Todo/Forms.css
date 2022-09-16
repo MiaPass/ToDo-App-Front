@@ -41,7 +41,7 @@ form {
   /* overflow: hidden; */
 }
 
-.App form {
+[data-theme="light"] form {
   border: 0.3px solid rgb(36, 36, 36);
 }
 

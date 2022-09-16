@@ -1,0 +1,12 @@
+[data-theme="light"] .formLog {
+  border: none;
+}
+
+[data-theme="dark"] .formLog {
+  border: none;
+}
+
+.div-log {
+  width: 45%;
+  float: left;
+}
